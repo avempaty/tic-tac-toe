@@ -1,0 +1,19 @@
+{
+  "name": "nextjs-node-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon -r esm server.js",
+    "build": "next build",
+    "start": "node -r esm server.js"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "next": "9.4.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}
