@@ -10,40 +10,9 @@ import boardTable from "./db/board.js"
 nextApp.prepare()
 .then(() => {
   const server = express()
-
-  // server.post('*', (req, res) => {
-  //   console.log('post')
-  //   res.status(200)
-  //   res.end('post!')
-  // })
-  // server.get('*', (req, res) => {
-  //   console.log('get')
-  //   res.status(200)
-  //   res.end('get!')
-  // })
-  // server.put('*', (req, res) => {
-  //   console.log('put')
-  //   res.status(200)
-  //   res.end('put!')
-  // })
-  // server.delete('*', (req, res) => {
-  //   console.log('delete')
-  //   res.status(200)
-  //   res.end('delete!')
-  // })
-  // server.options('*', (req, res) => {
-  //   console.log('options')
-  //   res.status(200)
-  //   res.end('options!')
-  // })
-
-  // server.patch('*', (req, res) => {
-  //   console.log('patch')
-  //   res.status(200)
-  //   res.end('patch!')
-  // })
   
   server.post("/boards", async (req, res) => {
+    console.log("This is the body " + req.body)
     try {
       const board = await boardTable.create()
       res.status(201)
@@ -62,7 +31,6 @@ nextApp.prepare()
 
   server.patch("/boards/:boardId/box/:boxId", async (req, res) => {
     try {
-      console.log('helloooooo')
       const box = await boardTable.updateBoxById(req.params.boardId, req.params.boxId)
       res.status(200)
       console.log(box)

@@ -1,5 +1,6 @@
 import Table from "./table"
 import {v4} from "uuid"
+import BaseError from "baseerr"
 
 class BoardsTable extends Table {
     constructor() {

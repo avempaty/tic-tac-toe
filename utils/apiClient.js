@@ -8,16 +8,10 @@ class ApiClient extends SimpleApiClient {
     createTicTacToe() {
         return this.post("/boards", 201)
     }
-    async patchBoxById(boardId, boxId) {
-        console.log(boardId)
-        console.log(boxId)
-        return this.json(`/boards/${boardId}/box/${boxId}`, {
-            method: 'PATCH'
-        }, 200)
-    }
-    /*patchBoxById(boardId, boxId) {
+    
+    patchBoxById(boardId, boxId) {
         return this.patch(`/boards/${boardId}/box/${boxId}`, 200)
-    }*/
+    }
 }
 
 export default new ApiClient()
